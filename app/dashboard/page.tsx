@@ -1,7 +1,7 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarLayout, SidebarTrigger } from "@/components/ui/sidebar";
 import { WbrChart } from "@/components/wbr-chart";
-
+import { Navbar } from "@/components/navbar-dashboard";
 // Sample data with added variation and included title and y-axis labels
 const metricsData = [
   {
@@ -63,23 +63,29 @@ const metricsData = [
 export default async function Page() {
   const { cookies } = await import("next/headers");
   return (
-    <SidebarLayout
-      defaultOpen={cookies().get("sidebar:state")?.value === "true"}
-    >
-      <AppSidebar />
-      <main className="flex flex-1 flex-col p-2 transition-all duration-300 ease-in-out">
-        <div className="h-full rounded-md border-2 border-dashed p-2">
-          <SidebarTrigger />
-          {metricsData.map((metric, index) => (
-            <WbrChart
-              key={index}
-              data={metric.data}
-              title={metric.title}
-              yAxisLabel={metric.yAxisLabel}
-            />
-          ))}
+    <>
+      <SidebarLayout
+        defaultOpen={cookies().get("sidebar:state")?.value === "true"}
+      >
+        <AppSidebar />
+
+        <div className="flex flex-col w-full">
+          <Navbar />
+
+          <main className="flex flex-1 flex-col p-2 transition-all duration-300 ease-in-out">
+            <div className="h-full rounded-md border-2 border-dashed p-2">
+              {metricsData.map((metric, index) => (
+                <WbrChart
+                  key={index}
+                  data={metric.data}
+                  title={metric.title}
+                  yAxisLabel={metric.yAxisLabel}
+                />
+              ))}
+            </div>
+          </main>
         </div>
-      </main>
-    </SidebarLayout>
+      </SidebarLayout>
+    </>
   );
 }
