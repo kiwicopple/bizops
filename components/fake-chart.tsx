@@ -20,118 +20,118 @@ import {
 export const description = "Two interactive line charts";
 
 const chartData = [
-  { date: "2024-04-01", desktop: 222, mobile: 150 },
-  { date: "2024-04-02", desktop: 97, mobile: 180 },
-  { date: "2024-04-03", desktop: 167, mobile: 120 },
-  { date: "2024-04-04", desktop: 242, mobile: 260 },
-  { date: "2024-04-05", desktop: 373, mobile: 290 },
-  { date: "2024-04-06", desktop: 301, mobile: 340 },
-  { date: "2024-04-07", desktop: 245, mobile: 180 },
-  { date: "2024-04-08", desktop: 409, mobile: 320 },
-  { date: "2024-04-09", desktop: 59, mobile: 110 },
-  { date: "2024-04-10", desktop: 261, mobile: 190 },
-  { date: "2024-04-11", desktop: 327, mobile: 350 },
-  { date: "2024-04-12", desktop: 292, mobile: 210 },
-  { date: "2024-04-13", desktop: 342, mobile: 380 },
-  { date: "2024-04-14", desktop: 137, mobile: 220 },
-  { date: "2024-04-15", desktop: 120, mobile: 170 },
-  { date: "2024-04-16", desktop: 138, mobile: 190 },
-  { date: "2024-04-17", desktop: 446, mobile: 360 },
-  { date: "2024-04-18", desktop: 364, mobile: 410 },
-  { date: "2024-04-19", desktop: 243, mobile: 180 },
-  { date: "2024-04-20", desktop: 89, mobile: 150 },
-  { date: "2024-04-21", desktop: 137, mobile: 200 },
-  { date: "2024-04-22", desktop: 224, mobile: 170 },
-  { date: "2024-04-23", desktop: 138, mobile: 230 },
-  { date: "2024-04-24", desktop: 387, mobile: 290 },
-  { date: "2024-04-25", desktop: 215, mobile: 250 },
-  { date: "2024-04-26", desktop: 75, mobile: 130 },
-  { date: "2024-04-27", desktop: 383, mobile: 420 },
-  { date: "2024-04-28", desktop: 122, mobile: 180 },
-  { date: "2024-04-29", desktop: 315, mobile: 240 },
-  { date: "2024-04-30", desktop: 454, mobile: 380 },
-  { date: "2024-05-01", desktop: 165, mobile: 220 },
-  { date: "2024-05-02", desktop: 293, mobile: 310 },
-  { date: "2024-05-03", desktop: 247, mobile: 190 },
-  { date: "2024-05-04", desktop: 385, mobile: 420 },
-  { date: "2024-05-05", desktop: 481, mobile: 390 },
-  { date: "2024-05-06", desktop: 498, mobile: 520 },
-  { date: "2024-05-07", desktop: 388, mobile: 300 },
-  { date: "2024-05-08", desktop: 149, mobile: 210 },
-  { date: "2024-05-09", desktop: 227, mobile: 180 },
-  { date: "2024-05-10", desktop: 293, mobile: 330 },
-  { date: "2024-05-11", desktop: 335, mobile: 270 },
-  { date: "2024-05-12", desktop: 197, mobile: 240 },
-  { date: "2024-05-13", desktop: 197, mobile: 160 },
-  { date: "2024-05-14", desktop: 448, mobile: 490 },
-  { date: "2024-05-15", desktop: 473, mobile: 380 },
-  { date: "2024-05-16", desktop: 338, mobile: 400 },
-  { date: "2024-05-17", desktop: 499, mobile: 420 },
-  { date: "2024-05-18", desktop: 315, mobile: 350 },
-  { date: "2024-05-19", desktop: 235, mobile: 180 },
-  { date: "2024-05-20", desktop: 177, mobile: 230 },
-  { date: "2024-05-21", desktop: 82, mobile: 140 },
-  { date: "2024-05-22", desktop: 81, mobile: 120 },
-  { date: "2024-05-23", desktop: 252, mobile: 290 },
-  { date: "2024-05-24", desktop: 294, mobile: 220 },
-  { date: "2024-05-25", desktop: 201, mobile: 250 },
-  { date: "2024-05-26", desktop: 213, mobile: 170 },
-  { date: "2024-05-27", desktop: 420, mobile: 460 },
-  { date: "2024-05-28", desktop: 233, mobile: 190 },
-  { date: "2024-05-29", desktop: 78, mobile: 130 },
-  { date: "2024-05-30", desktop: 340, mobile: 280 },
-  { date: "2024-05-31", desktop: 178, mobile: 230 },
-  { date: "2024-06-01", desktop: 178, mobile: 200 },
-  { date: "2024-06-02", desktop: 470, mobile: 410 },
-  { date: "2024-06-03", desktop: 103, mobile: 160 },
-  { date: "2024-06-04", desktop: 439, mobile: 380 },
-  { date: "2024-06-05", desktop: 88, mobile: 140 },
-  { date: "2024-06-06", desktop: 294, mobile: 250 },
-  { date: "2024-06-07", desktop: 323, mobile: 370 },
-  { date: "2024-06-08", desktop: 385, mobile: 320 },
-  { date: "2024-06-09", desktop: 438, mobile: 480 },
-  { date: "2024-06-10", desktop: 155, mobile: 200 },
-  { date: "2024-06-11", desktop: 92, mobile: 150 },
-  { date: "2024-06-12", desktop: 492, mobile: 420 },
-  { date: "2024-06-13", desktop: 81, mobile: 130 },
-  { date: "2024-06-14", desktop: 426, mobile: 380 },
-  { date: "2024-06-15", desktop: 307, mobile: 350 },
-  { date: "2024-06-16", desktop: 371, mobile: 310 },
-  { date: "2024-06-17", desktop: 475, mobile: 520 },
-  { date: "2024-06-18", desktop: 107, mobile: 170 },
-  { date: "2024-06-19", desktop: 341, mobile: 290 },
-  { date: "2024-06-20", desktop: 408, mobile: 450 },
-  { date: "2024-06-21", desktop: 169, mobile: 210 },
-  { date: "2024-06-22", desktop: 317, mobile: 270 },
-  { date: "2024-06-23", desktop: 480, mobile: 530 },
-  { date: "2024-06-24", desktop: 132, mobile: 180 },
-  { date: "2024-06-25", desktop: 141, mobile: 190 },
-  { date: "2024-06-26", desktop: 434, mobile: 380 },
-  { date: "2024-06-27", desktop: 448, mobile: 490 },
-  { date: "2024-06-28", desktop: 149, mobile: 200 },
-  { date: "2024-06-29", desktop: 103, mobile: 160 },
-  { date: "2024-06-30", desktop: 446, mobile: 400 },
+  { date: "2024-04-01", variance: 222, metric: 150 },
+  { date: "2024-04-02", variance: 97, metric: 180 },
+  { date: "2024-04-03", variance: 167, metric: 120 },
+  { date: "2024-04-04", variance: 242, metric: 260 },
+  { date: "2024-04-05", variance: 373, metric: 290 },
+  { date: "2024-04-06", variance: 301, metric: 340 },
+  { date: "2024-04-07", variance: 245, metric: 180 },
+  { date: "2024-04-08", variance: 409, metric: 320 },
+  { date: "2024-04-09", variance: 59, metric: 110 },
+  { date: "2024-04-10", variance: 261, metric: 190 },
+  { date: "2024-04-11", variance: 327, metric: 350 },
+  { date: "2024-04-12", variance: 292, metric: 210 },
+  { date: "2024-04-13", variance: 342, metric: 380 },
+  { date: "2024-04-14", variance: 137, metric: 220 },
+  { date: "2024-04-15", variance: 120, metric: 170 },
+  { date: "2024-04-16", variance: 138, metric: 190 },
+  { date: "2024-04-17", variance: 446, metric: 360 },
+  { date: "2024-04-18", variance: 364, metric: 410 },
+  { date: "2024-04-19", variance: 243, metric: 180 },
+  { date: "2024-04-20", variance: 89, metric: 150 },
+  { date: "2024-04-21", variance: 137, metric: 200 },
+  { date: "2024-04-22", variance: 224, metric: 170 },
+  { date: "2024-04-23", variance: 138, metric: 230 },
+  { date: "2024-04-24", variance: 387, metric: 290 },
+  { date: "2024-04-25", variance: 215, metric: 250 },
+  { date: "2024-04-26", variance: 75, metric: 130 },
+  { date: "2024-04-27", variance: 383, metric: 420 },
+  { date: "2024-04-28", variance: 122, metric: 180 },
+  { date: "2024-04-29", variance: 315, metric: 240 },
+  { date: "2024-04-30", variance: 454, metric: 380 },
+  { date: "2024-05-01", variance: 165, metric: 220 },
+  { date: "2024-05-02", variance: 293, metric: 310 },
+  { date: "2024-05-03", variance: 247, metric: 190 },
+  { date: "2024-05-04", variance: 385, metric: 420 },
+  { date: "2024-05-05", variance: 481, metric: 390 },
+  { date: "2024-05-06", variance: 498, metric: 520 },
+  { date: "2024-05-07", variance: 388, metric: 300 },
+  { date: "2024-05-08", variance: 149, metric: 210 },
+  { date: "2024-05-09", variance: 227, metric: 180 },
+  { date: "2024-05-10", variance: 293, metric: 330 },
+  { date: "2024-05-11", variance: 335, metric: 270 },
+  { date: "2024-05-12", variance: 197, metric: 240 },
+  { date: "2024-05-13", variance: 197, metric: 160 },
+  { date: "2024-05-14", variance: 448, metric: 490 },
+  { date: "2024-05-15", variance: 473, metric: 380 },
+  { date: "2024-05-16", variance: 338, metric: 400 },
+  { date: "2024-05-17", variance: 499, metric: 420 },
+  { date: "2024-05-18", variance: 315, metric: 350 },
+  { date: "2024-05-19", variance: 235, metric: 180 },
+  { date: "2024-05-20", variance: 177, metric: 230 },
+  { date: "2024-05-21", variance: 82, metric: 140 },
+  { date: "2024-05-22", variance: 81, metric: 120 },
+  { date: "2024-05-23", variance: 252, metric: 290 },
+  { date: "2024-05-24", variance: 294, metric: 220 },
+  { date: "2024-05-25", variance: 201, metric: 250 },
+  { date: "2024-05-26", variance: 213, metric: 170 },
+  { date: "2024-05-27", variance: 420, metric: 460 },
+  { date: "2024-05-28", variance: 233, metric: 190 },
+  { date: "2024-05-29", variance: 78, metric: 130 },
+  { date: "2024-05-30", variance: 340, metric: 280 },
+  { date: "2024-05-31", variance: 178, metric: 230 },
+  { date: "2024-06-01", variance: 178, metric: 200 },
+  { date: "2024-06-02", variance: 470, metric: 410 },
+  { date: "2024-06-03", variance: 103, metric: 160 },
+  { date: "2024-06-04", variance: 439, metric: 380 },
+  { date: "2024-06-05", variance: 88, metric: 140 },
+  { date: "2024-06-06", variance: 294, metric: 250 },
+  { date: "2024-06-07", variance: 323, metric: 370 },
+  { date: "2024-06-08", variance: 385, metric: 320 },
+  { date: "2024-06-09", variance: 438, metric: 480 },
+  { date: "2024-06-10", variance: 155, metric: 200 },
+  { date: "2024-06-11", variance: 92, metric: 150 },
+  { date: "2024-06-12", variance: 492, metric: 420 },
+  { date: "2024-06-13", variance: 81, metric: 130 },
+  { date: "2024-06-14", variance: 426, metric: 380 },
+  { date: "2024-06-15", variance: 307, metric: 350 },
+  { date: "2024-06-16", variance: 371, metric: 310 },
+  { date: "2024-06-17", variance: 475, metric: 520 },
+  { date: "2024-06-18", variance: 107, metric: 170 },
+  { date: "2024-06-19", variance: 341, metric: 290 },
+  { date: "2024-06-20", variance: 408, metric: 450 },
+  { date: "2024-06-21", variance: 169, metric: 210 },
+  { date: "2024-06-22", variance: 317, metric: 270 },
+  { date: "2024-06-23", variance: 480, metric: 530 },
+  { date: "2024-06-24", variance: 132, metric: 180 },
+  { date: "2024-06-25", variance: 141, metric: 190 },
+  { date: "2024-06-26", variance: 434, metric: 380 },
+  { date: "2024-06-27", variance: 448, metric: 490 },
+  { date: "2024-06-28", variance: 149, metric: 200 },
+  { date: "2024-06-29", variance: 103, metric: 160 },
+  { date: "2024-06-30", variance: 446, metric: 400 },
 ];
 
 const chartConfig = {
   views: {
     label: "Page Views",
   },
-  desktop: {
-    label: "Desktop",
-    color: "hsl(var(--chart-1))",
-  },
-  mobile: {
-    label: "Mobile",
+  variance: {
+    label: "Variance",
     color: "hsl(var(--chart-2))",
+  },
+  metric: {
+    label: "Metric",
+    color: "hsl(var(--chart-3))",
   },
 } satisfies ChartConfig;
 
 export function FakeChart() {
   const total = React.useMemo(
     () => ({
-      desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),
-      mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0),
+      variance: chartData.reduce((acc, curr) => acc + curr.variance, 0),
+      metric: chartData.reduce((acc, curr) => acc + curr.metric, 0),
     }),
     []
   );
@@ -142,11 +142,11 @@ export function FakeChart() {
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
           <CardTitle>Page Views</CardTitle>
           <CardDescription>
-            Showing total visitors for the last 3 months.
+            Total visitors for the last 3 months.
           </CardDescription>
         </div>
         <div className="flex">
-          {["desktop", "mobile"].map((key) => {
+          {["variance", "metric"].map((key) => {
             const chart = key as keyof typeof chartConfig;
             return (
               <div
@@ -166,11 +166,11 @@ export function FakeChart() {
       </CardHeader>
       <CardContent className="p-2 sm:p-6">
         <div className="flex flex-col gap-4">
-          {["desktop", "mobile"].map((chartType) => (
+          {["variance", "metric"].map((chartType) => (
             <ChartContainer
               key={chartType}
               config={chartConfig}
-              className="w-full"
+              className="w-full h-[200px]" // Adjusted height here
             >
               <LineChart
                 accessibilityLayer
@@ -214,7 +214,7 @@ export function FakeChart() {
                 />
                 <Line
                   dataKey={chartType}
-                  type="monotone"
+                  type={chartType === "variance" ? "monotone" : "step"}
                   stroke={`var(--color-${chartType})`}
                   strokeWidth={2}
                   dot={false}
