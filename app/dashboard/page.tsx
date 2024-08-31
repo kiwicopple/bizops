@@ -2,6 +2,8 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarLayout, SidebarTrigger } from "@/components/ui/sidebar";
 import { WbrChart } from "@/components/wbr-chart";
 import { Navbar } from "@/components/navbar-dashboard";
+import { FakeChart } from "@/components/fake-chart";
+import { FakePanel } from "@/components/fake-panel";
 // Sample data with added variation and included title and y-axis labels
 const metricsData = [
   {
@@ -73,6 +75,14 @@ export default async function Page() {
           <Navbar />
 
           <main className="flex flex-1 flex-col p-2 transition-all duration-300 ease-in-out">
+            <div className="flex flex-1 gap-2 mb-2">
+              <div className="flex-grow">
+                <FakeChart />
+              </div>
+              <div className="w-1/3">
+                <FakePanel />
+              </div>
+            </div>
             <div className="h-full rounded-md border-2 border-dashed p-2">
               {metricsData.map((metric, index) => (
                 <WbrChart
