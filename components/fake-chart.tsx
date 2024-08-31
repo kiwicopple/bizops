@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
+import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 
 import {
   Card,
@@ -17,7 +17,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-export const description = "An interactive line chart";
+export const description = "Two interactive line charts";
 
 const chartData = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
@@ -128,9 +128,6 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function FakeChart() {
-  const [activeChart, setActiveChart] =
-    React.useState<keyof typeof chartConfig>("desktop");
-
   const total = React.useMemo(
     () => ({
       desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),
@@ -152,11 +149,9 @@ export function FakeChart() {
           {["desktop", "mobile"].map((key) => {
             const chart = key as keyof typeof chartConfig;
             return (
-              <button
+              <div
                 key={chart}
-                data-active={activeChart === chart}
                 className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
-                onClick={() => setActiveChart(chart)}
               >
                 <span className="text-xs text-muted-foreground">
                   {chartConfig[chart].label}
@@ -164,60 +159,70 @@ export function FakeChart() {
                 <span className="text-lg font-bold leading-none sm:text-3xl">
                   {total[key as keyof typeof total].toLocaleString()}
                 </span>
-              </button>
+              </div>
             );
           })}
         </div>
       </CardHeader>
-      <CardContent className="p-2 sm:p-6 h-full">
-        <ChartContainer config={chartConfig} className="w-full h-full">
-          <LineChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              left: 12,
-              right: 12,
-            }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="date"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              minTickGap={32}
-              tickFormatter={(value) => {
-                const date = new Date(value);
-                return date.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                });
-              }}
-            />
-            <ChartTooltip
-              content={
-                <ChartTooltipContent
-                  className="w-[150px]"
-                  nameKey="views"
-                  labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
+      <CardContent className="p-2 sm:p-6">
+        <div className="flex flex-col gap-4">
+          {["desktop", "mobile"].map((chartType) => (
+            <ChartContainer
+              key={chartType}
+              config={chartConfig}
+              className="w-full"
+            >
+              <LineChart
+                accessibilityLayer
+                data={chartData}
+                margin={{
+                  top: 5,
+                  right: 10,
+                  left: 10,
+                  bottom: 5,
+                }}
+              >
+                <CartesianGrid vertical={false} />
+                <XAxis
+                  dataKey="date"
+                  tickLine={false}
+                  axisLine={false}
+                  tickMargin={8}
+                  minTickGap={32}
+                  tickFormatter={(value) => {
+                    const date = new Date(value);
+                    return date.toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
-                      year: "numeric",
                     });
                   }}
                 />
-              }
-            />
-            <Line
-              dataKey={activeChart}
-              type="monotone"
-              stroke={`var(--color-${activeChart})`}
-              strokeWidth={2}
-              dot={false}
-            />
-          </LineChart>
-        </ChartContainer>
+                <ChartTooltip
+                  content={
+                    <ChartTooltipContent
+                      className="w-[150px]"
+                      nameKey="views"
+                      labelFormatter={(value) => {
+                        return new Date(value).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        });
+                      }}
+                    />
+                  }
+                />
+                <Line
+                  dataKey={chartType}
+                  type="monotone"
+                  stroke={`var(--color-${chartType})`}
+                  strokeWidth={2}
+                  dot={false}
+                />
+              </LineChart>
+            </ChartContainer>
+          ))}
+        </div>
       </CardContent>
     </Card>
   );
