@@ -83,7 +83,7 @@ export default async function Page() {
                 <FakePanel />
               </div>
             </div>
-            <div className="h-full rounded-md border-2 border-dashed p-2">
+            <div className="h-full p-2">
               {metricsData.map((metric, index) => (
                 <WbrChart
                   key={index}
